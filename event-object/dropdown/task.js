@@ -1,6 +1,6 @@
 const dropList = document.querySelector(".dropdown__list");
     listItem = document.querySelectorAll('.dropdown__item');
-let listValue = document.querySelector('.dropdown__value');
+    listValue = document.querySelector('.dropdown__value');
     
 
 

@@ -2,17 +2,21 @@
 
 const second = document.getElementById('timer');
 
-
-
-setInterval(()=>{
+function counter(){
     second.textContent = Number(second.textContent) - 1;
-    if (second.textContent <= 0) {
+    if (second.textContent == 0) {
         alert('Вы выиграли');
-    }
-}, 1000);
+        clearInterval(timer);
+    } 
+    
+}
+
+let timer = setInterval(counter, 1000); 
 
 
-   
+
+
+  
 
 
 
