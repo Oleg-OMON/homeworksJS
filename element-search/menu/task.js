@@ -14,10 +14,10 @@ for (let i = 0; i < link.length; i++) {
             });
 
             item[i].querySelector('.menu_sub').classList.add('menu_active');
-            return item[i].href = false;
+            return false;
         } else if (item[i].querySelector('.menu_sub') !== null && item[i].querySelector('.menu_active') !== null) {
             item[i].querySelector('.menu_sub').classList.remove('menu_active');
-            return item[i].href = false;
+            return  false;
         }
     }
 }
