@@ -44,6 +44,7 @@ function sendMessageClient(e){
 
     chat_widget__messages.innerHTML += client_massages;
     sendMessageBot();
+    chat_widget__input.value = '';
     }
 }
 
