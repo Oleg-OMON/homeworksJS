@@ -69,7 +69,6 @@ class Autocomplete {
 
   getMatches( text ) {
 
-    
     const input = this.input.options;
     const array_opt = [];
     
@@ -83,7 +82,23 @@ class Autocomplete {
         }
 
       return array_opt;
+
+    let options = this.input.options;
+    let selectOptions = [];
+
+    function checkOption(selectOptions) {
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].text.includes(text)) {
+          selectOptions.push({ text: options[i].text, value: options[i].value});
+        }
+      }
+    }
+
+    checkOption(selectOptions);
+
+    return selectOptions;
   }
+  
 }
 
 new Autocomplete( document.querySelector( '.autocomplete' ));
