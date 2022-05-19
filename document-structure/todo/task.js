@@ -1,16 +1,17 @@
 const input = document.getElementById('task__input');
 const tasks__div = document.getElementById('tasks__list');
-
+const tasks__add = document.getElementById('tasks__add');
 
 function sendTask(e){
     
-    if(e.keyCode== 13 && input.value != '') {
+    tasks__add.addEventListener('click', () =>{
         const task = `<div class="task">
                         <div class="task__title">
-                            ${input.value}
+                            ${input.value.trim()}
                         </div>
                         <a href="#" class="task__remove">&times;</a>
                      </div>`;
+        if(input.value.length !== 0) {
         tasks__div.insertAdjacentHTML('afterBegin',task);
         input.value = '';
         e.preventDefault();
@@ -23,7 +24,9 @@ function sendTask(e){
         });
 
         return false;
-    }
+    
+        }
+    });
     
 }
 

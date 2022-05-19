@@ -1,4 +1,4 @@
-const has_tooltip  = querySelectorAll('.has-tooltip');
+const has_tooltip  = document.querySelectorAll('.has-tooltip');
 
 function tooltip (tooltipText) {
     const tooltip = document.createElement('div');
@@ -7,7 +7,7 @@ function tooltip (tooltipText) {
     return tooltip.outerHTML;
 }
 
-for (let item of text) {
+for (let item of has_tooltip) {
     item.insertAdjacentHTML('afterEnd', tooltip (item.title));
 
     item.addEventListener('click', function(e) {

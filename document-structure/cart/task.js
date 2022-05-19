@@ -15,7 +15,7 @@ for(let i = 0; i < products.length; i++){
     }
 
     function reduce(){  
-        if(count_product.innerText >! 1){
+        if(count_product.innerText != 0){
             count_product.innerText--;
         }         
     }
@@ -34,17 +34,17 @@ for (let i = 0; i < product_add.length; i++) {
         const product = e.target.closest('.product');
         const id = product.dataset.id;
         const img = product.querySelector('img').getAttribute('src');
-        const count = +event.target.parentNode.querySelector('.product__quantity-value').innerText;
-            for (let item of cart.children) {
-                    if (item.dataset.id === id ) {                
-                    
-                        let quantityNow = item.querySelector('.cart__product-count');
+        const count = +e.target.parentNode.querySelector('.product__quantity-value').innerText;
+        const article = Array.from(cart.children).find(item=>item.dataset.id === id);
+        
+                    if (article ) {                
+                        let quantityNow = article.querySelector('.cart__product-count');
                         let total = +quantityNow.innerText;
                         quantityNow.innerText = total + count;
                 
                         return false;
                     }                              
-        }   
+          
         
         cart.insertAdjacentHTML('beforeend', `
                     <div class="cart__product" data-id="${id}">
