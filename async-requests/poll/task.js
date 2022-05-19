@@ -1,6 +1,6 @@
 const poll__title = document.getElementById('poll__title');
 const poll__answers = document.getElementById('poll__answers');
-// const btn = document.getElementsByTagName('button');
+
 
 function question(){
     const xhr = new XMLHttpRequest();
@@ -18,6 +18,7 @@ function question(){
                                             </button>`;                 
             }
             const answerButtons = document.querySelectorAll('.poll__answer');
+            
             for(let button of answerButtons){
                 
                button.addEventListener('click', () =>{
