@@ -1,6 +1,6 @@
 const poll__title = document.getElementById('poll__title');
 const poll__answers = document.getElementById('poll__answers');
-let btn = document.getElementsByTagName('button');
+// const btn = document.getElementsByTagName('button');
 
 function question(){
     const xhr = new XMLHttpRequest();
@@ -15,19 +15,19 @@ function question(){
             for(i = 0; i < answers_list.length; i++){
                 poll__answers.innerHTML += `<button class="poll__answer">
                                                 ${answers_list[i]}
-                                            </button>`;
-                             
+                                            </button>`;                 
             }
-            for(i = 0; i < poll__answers.length; i++){
-
-               btn.addEventListener('click', () =>{
+            const answerButtons = document.querySelectorAll('.poll__answer');
+            for(let button of answerButtons){
+                
+               button.addEventListener('click', () =>{
                 alert('Спасибо, ваш голос засчитан!');
             }); 
             }
-            
 
         }
     });
+    
 
     xhr.open('GET', 'https://netology-slow-rest.herokuapp.com/poll.php');
 
